@@ -1,7 +1,9 @@
+# Largest and Smallest
+
 	.data
-arrayA:		.space	40
-len:		.word	10
-enterIn:	.asciiz	"Enter 10 integer values: "
+arrayA:			.space	40
+len:			.word	10
+enterIn:		.asciiz	"Enter 10 integer values: "
 largestPrompt:	.asciiz	"\n\tLargest: "
 smallestPrompt:	.asciiz	"\n\tSmallest: "
 
@@ -29,7 +31,7 @@ input:
 	j input
 
 findLS:
-	li $t1, 0	# Index i
+	li $t1, 0		# Index i
 	la $s0, arrayA	# Base address of Array
 	lw $a1, 0($s0)	# Largest
 	lw $a2, 0($s0)	# Smallest

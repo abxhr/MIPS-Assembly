@@ -1,9 +1,11 @@
+# Concatenate two Strings
+
 	.data
 finalStr:		.space		800
-strPrompt:	.asciiz		"Enter the String: "
-revPrompt:	.asciiz		"\nReveresed String: "
-aStr:		.space		400
-bStr:		.space		400
+strPrompt:		.asciiz		"Enter the String: "
+revPrompt:		.asciiz		"\nConcatenated String: "
+aStr:			.space		400
+bStr:			.space		400
 
 	.text
 main:

@@ -1,9 +1,10 @@
+# Sum of array elements
+
 	.data
-arrayA:		.space	40
-len:		.word	10
+arrayA:		.space	20
+len:		.word	5
 enterIn:	.asciiz	"Enter 10 integer values: "
-sumEPrompt:	.asciiz	"\n\tSum (Even): "
-sumOPrompt:	.asciiz	"\n\tSum (Odd): "
+sumPrompt:	.asciiz	"\n\tSum: "
 
 	.text
 main:
@@ -17,55 +18,39 @@ main:
 	la $s0, arrayA
 
 input:
-	bge $t1, $t0, findSums
+	bge $t1, $t0, findSum
 
 	li $v0, 5
 	syscall
 
 	sw $v0, 0($s0)
 
-	addi $s0, $s0, 4	
+	addi $s0, $s0, 4
 	addi $t1, $t1, 1
 	j input
 
-findSums:
+findSum:
 	li $t1, 0	# Index i
 	la $s0, arrayA	# Base address of Array
-	li $a1, 0	# Sum (Even)
-	li $a2, 0	# Sum (Odd)
+	li $a1, 0	# Sum
 
 loop: 
 	bge $t1, $t0, out
 
 	lw $t2, 0($s0)
 
-	rem $t3, $t2, 2
+	add $a1, $a1, $t2
 
-	beqz $t3, evenAdd
-	add $a2, $a2, $t2
-
-next:	addi $s0, $s0, 4
+	addi $s0, $s0, 4
 	addi $t1, $t1, 1
 	j loop
 
-evenAdd:
-	add $a1, $a1, $t2
-	j next
-
 out:
 	li $v0, 4		
-	la $a0, sumEPrompt
+	la $a0, sumPrompt
 	syscall
 	
 	add $a0, $zero, $a1
-	li $v0, 1
-	syscall
-
-	li $v0, 4		
-	la $a0, sumOPrompt
-	syscall
-	
-	add $a0, $zero, $a2
 	li $v0, 1
 	syscall
 

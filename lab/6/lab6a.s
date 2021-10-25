@@ -1,3 +1,5 @@
+# Length of a string
+
 	.data
 strIn:		.space		400
 strPrompt:	.asciiz		"Enter the String: "

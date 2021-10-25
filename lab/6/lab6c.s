@@ -1,3 +1,5 @@
+# Palindrome
+
 	.data
 strIn:		.space		400
 strPrompt:	.asciiz		"Enter the String: "

@@ -1,3 +1,5 @@
+# Reverse an input string
+
 	.data
 strIn:		.space		400
 strPrompt:	.asciiz		"Enter the String: "
