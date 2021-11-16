@@ -1,3 +1,5 @@
+# Binary Search
+
 	.data
 inPrompt:	.asciiz	"Enter the values of the array (Sorted)(MAX: 10): "
 searchPrompt:	.asciiz "Enter the value to search for: "
