@@ -42,8 +42,8 @@ afterIn:
 	addi $t1, $t1, -1
 
 	lw $a0, myA		# The array
-	add $a1, $zero, $v0		# The element to search for
-	addi $a2, $zero, 0	#  The lo value
+	add $a1, $zero, $v0	# The element to search for
+	addi $a2, $zero, 0	# The lo value
 	add $a3, $zero, $t1	# The high value
 	jal binSearch
 	
@@ -57,6 +57,10 @@ afterIn:
 found:	
 	li $v0, 4
 	la $a0, foundPrompt
+	syscall
+
+	li $v0, 1
+	add $a0, $v1, $zero
 	syscall
 
 exit: 
@@ -80,26 +84,33 @@ binSearch:
 	add $t0, $a2, $a3
 	srl $t0, $t0, 1
 	
-	sw $t1, myA($t0)
+	sll $t2, $t0, 2
+	lw $t1, myA($t2)
 
 	beq $a1, $t1, foundInIter
 	
 	blt $a1, $t1, lessThan
-	addi $a3, $a3, -1
+	addi $a2, $t0, 1
 	jal binSearch
-
-cameFrom:
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
 	jr $ra
 
 lessThan: 
-	add $a2, $t0, -1
+	addi $a3, $t0, -1
 	jal binSearch
-	j cameFrom
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
+	jr $ra
 
 foundInIter:
-	add $v0, $t1, $zero
+	add $v1, $t0, $zero
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
 	jr $ra
 
 escape:
 	addi $v0, $zero, -1
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
 	jr $ra
