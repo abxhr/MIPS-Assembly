@@ -43,7 +43,7 @@ afterIn:
 
 	addi $t1, $t1, -1
 
-	lw $a0, myA		# The array
+	lw $a0, myA			# The array
 	add $a1, $zero, $v0	# The element to search for
 	addi $a2, $zero, 0	# The lo value
 	add $a3, $zero, $t1	# The high value

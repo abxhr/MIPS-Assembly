@@ -5,7 +5,6 @@ strIn:		.space		400
 strPrompt:	.asciiz		"Enter the String: "
 lenPrompt:	.asciiz		"\nLength of the string: "
 
-	
 	.text
 main:
 	li $v0, 4
@@ -18,6 +17,7 @@ main:
 
 	la $s0, strIn
 	li $s1, 0
+
 loop:
 	add $t0, $s1, $s0
 

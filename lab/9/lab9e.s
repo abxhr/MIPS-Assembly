@@ -51,22 +51,22 @@ main:
 	la $a0, newl
 	syscall
 
-	l.s $f1, xVal
-	l.s $f3, aVal
-	l.s $f5, bVal
-	l.s $f7, cVal
+	l.s $f2, xVal
+	l.s $f4, aVal
+	l.s $f6, bVal
+	l.s $f8, cVal
 
-	mul.s $f5, $f5, $f1
-	add.s $f7, $f7, $f5
-	mul.s $f1, $f1, $f1
-	mul.s $f3, $f3, $f1
-	add.s $f3, $f3, $f7
+	mul.s $f6, $f6, $f2
+	add.s $f8, $f8, $f6
+	mul.s $f2, $f2, $f2
+	mul.s $f4, $f4, $f2
+	add.s $f4, $f4, $f8
 
 	li $v0, 4
 	la $a0, outPrompt
 	syscall
 
-	mov.d $f12, $f3
+	mov.d $f12, $f4
 	li $v0, 2
 	syscall
 

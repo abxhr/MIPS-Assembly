@@ -24,7 +24,7 @@ Collection of programs written in MIPS Assembly Language.
 
 ## Lab 4
 
-12. [Print th contents of an integer array](lab/4/lab4a.s)
+12. [Print the contents of an integer array](lab/4/lab4a.s)
 13. [Implement linear search for an input array](lab/4/lab4b.s)
 14. [Find the sum of two input integer arrays](lab/4/lab4c.s)
 
@@ -40,3 +40,31 @@ Collection of programs written in MIPS Assembly Language.
 19. [Reverse an input string](lab/6/lab6b.s)
 20. [Check if the given string is a palindrome or no](lab/6/lab6c.s)
 21. [Concatenate two input strings](lab/6/lab6d.s)
+
+## Lab 7
+
+22. [Use procedures to find *sum, difference, product and quotient*](lab/7/lab7a.s)
+23. [Linear Search](lab/7/lab7b.s)
+24. [Fibonacci Series](lab/7/lab7c.s)
+
+## Lab 8
+
+25. [Recursive Binary Search](lab/8/lab8a.s)
+26. [Power of a number using recursion](lab/8/lab8b.s)
+27. [Sum of N Natural Numbers using recursion](lab/8/lab8c.s)
+
+## Lab 9
+
+28. [Read and print float and double numbers](lab/9/lab9a.s)
+29. [Scan and print float and double numbers](lab/9/lab9b.s)
+30. [Area of a circle](lab/9/lab9c.s)
+31. [Fahrenheit to Celsius](lab/9/lab9d.s)
+32. [Output of a Polynomial](lab/9/lab9e.s)
+33. [Sum of float array](lab/9/lab9f.s)
+
+## Lab 10
+
+34. [Complex Number Addition](lab/10/lab10a.s)
+35. [Average of an integer array](lab/10/lab10b.s)
+36. [Compare floating point numbers](lab/10/lab10c.s)
+37. [Using Conditionals to find the bill](lab/10/lab10d.s)
